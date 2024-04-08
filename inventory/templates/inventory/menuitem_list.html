@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+  <div class="container">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+		<h2>Menu Items</h2>
+		<a role="button" class="btn btn-success text-light" href="{% url 'menuitemcreate' %}">Add Menu item</a>
+	</div>
+	<hr>
+    <table class="table table-striped table-hover">
+      <tr>
+        <tr>
+		  <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </tr>
+
+      {% for menuitem in object_list %}
+        <tr>
+		  <td>{{ menuitem.id }}</td>
+          <td><a href="{% url 'menuitemdetails' menuitem.id %}">{{ menuitem.title | title }}</a></td>
+          <td>${{ menuitem.price}} </td>
+          <td>
+		    <a role="button" href="{% url 'menuitemupdate' menuitem.id %}" class="btn btn-success text-light">Update</a>
+		    <a role="button" href="{% url 'menuitemdelete' menuitem.id %}" class="btn btn-danger text-light">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

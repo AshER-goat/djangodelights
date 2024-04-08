@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid p-4">
+    <h2>Hello, {{user.username}}! </h2><br>
+	<p>This is an app created with Python and Django. It lets you add, delete, and update ingredients, menu items, and purchases
+	of said menu items for a fake cafe.</p>
+	<p>Currently this cafe serves shakes with simple, wholesome ingredients coming in 4 flavors: Vanilla, Chocolate Malt, Strawberry, 
+	and Ultra Mega (all 3 flavors).</p>
+	<hr>
+	<p>Per codecademy, this app should answer the following:</p>
+    <p>What is currently in the restaurant’s inventory?<br>
+	What purchases have been made?<br>
+    What does the restaurant’s menu look like? What ingredients (and how many of each) are required for each item on the menu? 
+	What’s the price of each item?<br>
+    What is the total revenue for the restaurant’s overall recorded purchases?<br>
+	What is the total cost to the restaurant’s overall purchases made (sum of cost of all ingredients used).<br>
+	How much profit (revenue - cost) does the restaurant make?<br><br>
+    <a href="{% url 'menuitemlist'%}">Start by looking at what the cafe has!</a>
+	&#128525;&#129321;&#128523;
+  </div>
+{% endblock %}

@@ -1,0 +1,117 @@
+html {font-size: 16px;}
+
+body {
+    color: #333;
+    margin: 0;
+	padding: 0;
+	font-family: 'Times New Roman', serif;
+}
+	
+h1 {
+	font-size: 32px;
+	font-family: Vivaldi, "Comic Sans", cursive;
+	color: #edc5d7
+}
+
+.header {
+    background-color: #d14775; /* #7B68EE; */
+    font-family: 'Times New Roman', serif;
+    color: #131200;
+	padding: 0
+}
+
+a:link,a:visited {color: #4B0082}
+a:hover,a:active {color: #6800b3}
+  
+.navbar {
+	background-color: #d14775; /* #7B68EE; */
+}
+
+.navbar-brand {
+	font-size: 33px;
+	font-family: Vivaldi, "Comic Sans", cursive;
+	color: #ffffaa!important;
+	text-shadow: 1px 1px 1px #000!important
+}
+
+.navbar-brand small {filter: hue-rotate(320deg);}
+
+.nav-link {	
+	font-size: 18px;
+	color: #ffffaa!important;
+	text-shadow: 1px 1px 1px #000!important
+}
+
+.btn-primary {color: #000!important;background-color: #87CEEB!important;border-color: #000!important}
+.btn-primary:hover {background-color: #66c1e5!important}
+.btn-success {color: #000!important;background-color: #66CDAA!important;border-color: #000!important}
+.btn-success:hover {background-color: #3ec195!important}
+.btn-warning {color: #000!important;background-color: #ffec80!important;border-color: #000!important}
+.btn-warning:hover {background-color: #ffe44d!important}
+.btn-danger {color: #000!important;background-color: #DB7093!important;border-color: #000!important}
+.btn-danger:hover {background-color: #d14775!important}
+
+form {padding: 6px}
+
+.table, form {
+	border: 2px solid #DB7093!important;
+	border-radius: 4px;
+	box-shadow: 1px 2px 1px #000
+}
+
+.table th {text-align: center}
+
+.table td {
+	border: none;
+	text-align: center
+}
+
+#fancy {
+	position: relative;
+	height: 30vh;
+	box-shadow: 2px 2px 5px;
+	background: #fff;
+	filter: contrast(7);
+	--mask: linear-gradient(red, #{rgba(#000, .45)});
+
+	&::before {
+		position: absolute;
+		top: 0; 
+		right: 0; 
+		bottom: 0; 
+		left: 0;
+		background: 
+			radial-gradient(#000, transparent) 0 0/ .5em .5em space;
+			-webkit-mask: var(--mask);
+			mask: var(--mask);
+		content: ''
+	}
+	
+}
+
+#inside-fancy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	border: 2px solid black;
+	border-radius: 4px;
+	font-weight: bolder;
+	text-align: center;
+	background-color: white
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (max-width:320px) {
+	.navbar {font-size: 16px}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width:576px) {
+	.navbar {font-size: 18px}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width:768px) {
+	.navbar {font-size: 20px}
+}

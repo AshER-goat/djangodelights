@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid p-4">
+  <div class="container">
+	<h2>Ingredient Details</h2>
+	<hr>
+    <table class="table table-striped">
+      <tr>
+        <tr>
+          <th>{{ ingredient.name | title}}</th>
+          <th>Details</th>
+        </tr>
+      </tr>
+
+      <tr>
+        <td>Quantity in stock</td>
+        <td>{{ ingredient.quantity }}</td>
+      </tr>
+      <tr>
+        <td>Measurement</td>
+        <td><small>{{ ingredient.unit }}</small>(s)</td>
+      </tr>
+      <tr>
+        <td>Used in Menu items:</td>
+        <td>
+          {% for item in recipe_requirements_list %}
+            <a href="{% url 'menuitemdetails' item.menu_item.id %}">{{ item.menu_item.title}}</a><br>
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>Unit needed</td>
+        <td>{{ ingredient.quantity }}</td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>${{ ingredient.unit_price }}</td>
+      </tr>
+      <tr>
+        <td><a role="button" href="{% url 'ingredientupdate' ingredient.id %}" class="btn btn-success text-light">Update</a></td>
+        <td><a role="button" href="{% url 'ingredientdelete' ingredient.id %}" class="btn btn-danger text-light">Delete</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% endblock %}

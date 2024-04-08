@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- need to display error message if not enough ingredients -->
+
+<div class="container-fluid p-4">
+  {% if messages %}
+    <div class="container">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <h2>Add Purchase</h2>
+    <hr>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-primary" value="Add"/>
+    </form>
+  </div>
+</div>
+{% endblock %}

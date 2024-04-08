@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid p-4">
+{% if form.errors %}
+  {% for error in form.errors %}
+    <p>{{ error }}</p>
+  {% endfor %}
+{% endif %}
+
+  <div class="container">
+    <h2>Login:</h2>
+    <hr>
+      <div class="container">
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+        <!-- <label for="email">E-mail:</label>
+        <input type="text" name="email"><br><br>
+        <label for="password">Password</label>
+        <input type="text" name="password"><br><br> -->
+		<input type="hidden" name="next" value="{{ login }}" />
+		<input type="submit" class="btn btn-primary mt-2" value="Log in"/>
+      </div>
+    </form>
+    <br><br>
+	<p>Have no account yet? Sign up here:
+	  <a role="button" class="text-decoration-none btn btn-warning" href="{% url 'signup' %}">Sign up</a>
+	</p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+  <div class="container">
+    <h2>El Cafe de Django Delights' balance</h2>
+    <hr>
+	<table class="table table-striped">
+      <tr>
+        <td>Total Cost<br><small>what the cafe pays (ingredients)</small></td>
+        <td>${{ total_cost }}</td>
+      </tr>
+      <tr>
+        <td>Total Revenue<br><small>what the custormer pays</small></td>
+        <td>${{ total_revenue }}</td>
+      </tr>
+      <tr>
+        <td>Totals profit: </td>
+        <td>${{ total_profit }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+  {% if messages %}
+    <div class="container">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+    </div>
+  {% endif %}
+  <div class="container">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+		<h2>Purchases</h2>
+		<a role="button" class="btn btn-success text-light" href="{% url 'purchasecreate' %}">Add purchase</a>
+	</div>
+	<hr>
+    <table class="table table-striped">
+      <tr>
+        <tr>
+		  <th>Purchased Item Id</th>
+		  <th>Purchased Item</th>
+          <th>Purchase Time</th>
+        </tr>
+      </tr>
+
+      {% for purchase in object_list|dictsortreversed:"timestamp" %}
+      <tr>
+	    <td>{{ purchase.id }}</td>
+        <td>{{ purchase.menu_item.title | title}}</td>
+		<td>{{ purchase.timestamp }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

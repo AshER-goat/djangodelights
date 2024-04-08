@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid p-4">
+    <h2>Hello, {{user.username}}! </h2><br>
+	<div class="container">
+	  <a href="{% url 'reset_password' %}">Reset Password</a>
+    </div>
+  </div>
+{% endblock %}
