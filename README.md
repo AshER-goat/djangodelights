@@ -1,3 +1,5 @@
+[inventory](https://github.com/AshER-goat/djangodelights/inventory/index.html)
+
 This is an app created with Python and Django. It lets you add, delete, and update ingredients, menu items, and purchases of said menu items for a fake cafe. I've been doing digital art and front-end(some back-end) web design for years but I only just learned Python and Django. I hope this app does not disappoint!
  
 Currently this cafe serves shakes with simple, wholesome ingredients coming in 4 flavors: Vanilla, Chocolate Malt, Strawberry, and Ultra Mega (all 3 flavors).
