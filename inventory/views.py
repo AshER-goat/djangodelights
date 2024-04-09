@@ -35,7 +35,7 @@ def logout_view(request):
 @login_required
 def home(request):
   context = {"name": request.user.username}
-  return render(request, "inventory/home.html", context)
+  return render(request, "inventory/index.html", context) #inventory/home.html
   
 def UserProfile(request):
   context = {"username": request.user.username}
