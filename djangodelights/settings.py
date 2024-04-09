@@ -33,6 +33,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'github.com/AshER-goat/djangodelights',  # Add your domain here
     'github.com/AshER-goat',      # Add GitHub.com here
+    'github.com'
     'www.github.com',  # Optionally, add www subdomain for GitHub    
 ]
 
